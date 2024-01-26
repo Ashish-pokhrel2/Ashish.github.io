@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function curie(){
+            var name = document.form.name.value;
+            var password = document.form.password.value; 
+            var confirmp = document.form.password1.value; 
+            var a = document.form.email.value;
+            if(name == "" || name == null){ 
+                alert("Name cannot be empty"); 
+                return false; 
+            }
+            else if(a=="" ||  a==null){
+                alert("Email adress is necessary!!")
+            }
+            else if(password.length<6){
+                alert("Password must be atleast 6 characters"); 
+                return false; 
+            }
+          
+            else if(confirmp != password){        
+                        alert("Confirm Password does not match"); 
+                return false;
+            }
+            else {
+                return true;
+            }
+   
+  // do something with the form data
+
+
+          
+            
+        }  
+
+        
+
+
+        </script>
+</head>
+<body>
+    <div class="form-wrap">
+
+    <form name="form"  action="profile.id.html" method = "get" onsubmit= "return curie()">
+        <h1>Sign up</h1>
+        <input type="text" name="name" placeholder="Enter your Name" required ><br>
+        <input type="email" name="email" placeholder="Enter your Email address"><br>
+        <input type="password" name="password" placeholder="Enter password" required><br>
+        <input type="password" name="password1" placeholder="confirm-Password" required><br>
+        <input type="submit" value="submit" id="button" onclick = "curie()">
+    </div>
+
+    </form>
+    
+</body>
+</html>
+
